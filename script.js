@@ -1,5 +1,5 @@
 function makeCpuChoice(){
-    var rand=parseInt(Math.random()*1000);
+    let rand=parseInt(Math.random()*1000);
     if(rand%3==0){
         return "Rock";
     }else if(rand%3==1){
@@ -9,8 +9,8 @@ function makeCpuChoice(){
     } 
 }
 function assignWinner(playerChoice,cpuChoice){
-    var player = playerChoice.toUpperCase();
-    var cpu = cpuChoice.toUpperCase();
+    let player = playerChoice.toUpperCase();
+    let cpu = cpuChoice.toUpperCase();
     console.log(player+"   "+cpu);
     if(player=="ROCK"){
         if(cpu=="SCISSORS"){
@@ -47,7 +47,7 @@ function assignWinner(playerChoice,cpuChoice){
     }
 }
 function announceWinner(playerChoice,cpuChoice){
-    var winner = parseInt(assignWinner(playerChoice,cpuChoice));
+    let winner = parseInt(assignWinner(playerChoice,cpuChoice));
     console.log(winner);
     if(winner==1){
         alert("Player wins! "+playerChoice+" beats "+cpuChoice);
@@ -60,16 +60,16 @@ function announceWinner(playerChoice,cpuChoice){
     }
 }
 function play(){
-    var playerChoice=prompt("Choose one : Rock , Paper or Scissors");
+    let playerChoice=prompt("Choose one : Rock , Paper or Scissors");
     while(!(playerChoice.toUpperCase()=="ROCK"||
     playerChoice.toUpperCase()=="PAPER"||
     playerChoice.toUpperCase()=="SCISSORS")){
         playerChoice=prompt
         ("There must have been some typo please type the correct spelling");
     }
-    var cpuChoice=makeCpuChoice();
+    let cpuChoice=makeCpuChoice();
     announceWinner(playerChoice,cpuChoice);
 }
-while(true)
+for(let i=0;i<5;i++)
 play();
 
